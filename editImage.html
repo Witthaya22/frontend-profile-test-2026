@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Image</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+    <script src="index.js" defer></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <a href="index.html" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded inline-block mb-4">
+        กลับสู่หน้าแรก
+    </a>
+    
+    <h1 class="text-5xl font-bold mb-6 text-center">แก้ไขภาพ</h1>
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
+        <div class="mb-6">
+            <label class="block mb-2 font-semibold">เลือกรูปภาพ:</label>
+            <input type="file" id="imageInput" accept="image/*" class="block w-full">
+        </div>
+
+        <div class="mb-4 p-3 bg-blue-50 rounded">
+            <p><strong>สถานะ:</strong> <span id="status">รอนำเข้ารูปภาพ</span></p>
+        </div>
+
+           <div class="mb-6 text-center">
+            <canvas id="canvas" class="border mx-auto max-w-full"></canvas>
+        </div>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block mb-1">ความสว่าง: <span id="brightVal">0</span></label>
+                <input type="range" id="brightness" min="-100" max="100" value="0" class="w-full">
+            </div>
+
+            <div>
+                <label class="block mb-1">คอนทราสต์: <span id="contrastVal">100</span></label>
+                <input type="range" id="contrast" min="50" max="200" value="100" class="w-full">
+            </div>
+
+            <div>
+                <label class="block mb-1">เบลอ: <span id="blurVal">0</span></label>
+                <input type="range" id="blur" min="0" max="10" value="0" class="w-full">
+            </div>
+
+            <div>
+                <label class="block mb-1">ขนาด: <span id="scaleVal">100</span>%</label>
+                <input type="range" id="scale" min="10" max="200" value="100" class="w-full">
+            </div>
+
+            <div class="flex gap-2 flex-wrap">
+                <button id="grayscale" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+                    ขาวดำ
+                </button>
+                <button id="reset" class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded">
+                    รีเซ็ต
+                </button>
+                <button id="download" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+                    ดาวน์โหลด
+                </button>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+</html>
